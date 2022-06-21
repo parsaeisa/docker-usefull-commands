@@ -14,4 +14,16 @@ docker run -e 'ACCEPT_EULA=Y' -e "SA_PASSWORD=Pass123!" -p 1433:1433 --name sqls
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Pass123!' -i q1.sql 
 ```
 
+## Interacting with containers 
+### Copy file in container 
+``` bash 
+sudo docker cp db.sql <container id>:/
+```
+### Go to container terminal 
+```bash 
+sudo docker exec -it <container id> bash
+```
+
+* You can get container Id from docker ps command .
+
 ## Open telemetry 
